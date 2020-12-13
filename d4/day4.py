@@ -28,7 +28,7 @@ def solver(passports):
                         is_valid = 2010 <= int(value) <= 2020
                     elif req == 'eyr':
                         is_valid = 2020 <= int(value) <= 2030
-                    elif req == 'hgt':  # hier
+                    elif req == 'hgt':
                         if 'cm' in value:
                             is_valid = 150 <= int(value[:-2]) <= 193
                         elif 'in' in value:

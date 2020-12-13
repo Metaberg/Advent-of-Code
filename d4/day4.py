@@ -1,7 +1,7 @@
 import re
 
 input_file = open("./src/d4-input.txt", "r")
-input_list = input_file.read().split('\n\n')
+input_list = input_file.read() .split('\n\n')
 input_file.close()
 
 

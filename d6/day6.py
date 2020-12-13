@@ -11,9 +11,9 @@ def solver(code):
     for data in code:
         group = data.split('\n')
         used = []
-        for pers in group:
+        for p in group:
             for i in questions:
-                if i in pers and i not in used:
+                if i in p and i not in used:
                     used.append(i)
                     count += 1
     return count

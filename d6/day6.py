@@ -5,17 +5,22 @@ input_file.close()
 
 def solver(code):
     count = 0
-    questions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-                 'n', 'm', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
+    questions = list(map(chr, range(97, 123)))  # Fill list with alphabet
     for data in code:
         group = data.split('\n')
         used = []
         for p in group:
             for i in questions:
-                if i in p and i not in used:
+                # Part 1 in comments
+                # if i in p and i not in used:
+                #     used.append(i)
+                #     count += 1
+                if i in p:
                     used.append(i)
-                    count += 1
+        for t in used:
+            if used.count(t) == len(group):
+                used = list(filter(lambda x: x != t, used))
+                count += 1
     return count
 
 

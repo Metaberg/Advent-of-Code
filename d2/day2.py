@@ -1,8 +1,8 @@
 import re
 
-
 input_file = open("./src/d2-input.txt", "r")
 input_list = input_file.read().splitlines()
+
 
 #  Solution of day 2
 
@@ -18,6 +18,7 @@ def solver_part1(input_list):
 
 
 print(solver_part1(input_list))
+
 
 # Solution of day 2
 

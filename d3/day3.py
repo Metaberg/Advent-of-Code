@@ -6,12 +6,6 @@ input_file.close()
 
 
 def solver(r, d):
-    '''
-    Returns the number of trees of the given Map (forest)
-    Uses out of global the iterable -> Map (forest)
-    r = right
-    d = down
-    '''
     rows = islice(forest, None, None, d)
     cols = count(step=r)
     return sum(row[col % len(row)] == '#' for (row, col) in zip(rows, cols))

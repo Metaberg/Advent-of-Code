@@ -1,12 +1,12 @@
 input_file = open("./src/d6-input.txt", "r")
-code = input_file.read() .split('\n\n')
+code = input_file.read().split('\n\n')
 input_file.close()
 
 
-def solver(code):
+def solver(code_to_solve):
     count = 0
     questions = list(map(chr, range(97, 123)))  # Fill list with alphabet
-    for data in code:
+    for data in code_to_solve:
         group = data.split('\n')
         used = []
         for p in group:

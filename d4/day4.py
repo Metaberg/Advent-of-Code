@@ -1,27 +1,26 @@
 import re
 
 input_file = open("./src/d4-input.txt", "r")
-input_list = input_file.read() .split('\n\n')
+input_list = input_file.read().split('\n\n')
 input_file.close()
 
 
 def solver(passports):
-    REQ = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
+    req = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
     valid = 0
-    error = 0
     for p in passports:
         norm = re.split(' |:|\n', p)
         # print(norm)
 
         no_req = 0
         is_valid = False
-        for req in REQ:
+        for req in req:
             if req in norm:
                 no_req += 1
                 idx = norm.index(req) + 1
                 value = norm[idx]
 
-                if value not in REQ:
+                if value not in req:
                     if req == 'byr':
                         is_valid = 1920 <= int(value) <= 2002
                     elif req == 'iyr':
